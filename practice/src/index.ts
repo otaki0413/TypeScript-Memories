@@ -1,3 +1,15 @@
-const message: string = "Hello World";
+import { createInterface } from "readline";
 
-console.log(message);
+const rl = createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question("パスワードを入力してください。", (password) => {
+  if (password === "hogehoge") {
+    console.log("ようこそ!");
+  } else {
+    console.log("だれ？");
+  }
+  rl.close();
+});
